@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0FBDDE93-9238-476A-BF73-51A0FCA4A5DD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>B2CPackageCollect</RootNamespace>
+    <AssemblyName>B2CPackageCollect</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Application.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.4\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v17.2.Core, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v17.2" />
+    <Reference Include="DevExpress.Images.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v17.2" />
+    <Reference Include="DevExpress.XtraBars.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v17.2.UI, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v17.2.Wizard, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v17.2" />
+    <Reference Include="DevExpress.Printing.v17.2.Core" />
+    <Reference Include="DevExpress.XtraGrid.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.4.12\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Polly, Version=5.6.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Polly.5.6.1\lib\net45\Polly.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\AppAppearance.cs" />
+    <Compile Include="Application\AppContext.cs" />
+    <Compile Include="Common\B2CPackageCollectException.cs" />
+    <Compile Include="Application\User.cs" />
+    <Compile Include="Common\CollectCompleteType.cs" />
+    <Compile Include="Common\CollectContext.cs" />
+    <Compile Include="Common\GlobalProperties.cs" />
+    <Compile Include="Common\GlobalPropertyName.cs" />
+    <Compile Include="Common\ControlNames.cs" />
+    <Compile Include="Common\InvoicePrint.cs" />
+    <Compile Include="Common\SquentialGuid.cs" />
+    <Compile Include="Common\ExecutionPolicy.cs" />
+    <Compile Include="Common\SqlExceptionSpecification.cs" />
+    <Compile Include="Common\Check.cs" />
+    <Compile Include="Common\Extensions.cs" />
+    <Compile Include="Common\StringResource.cs" />
+    <Compile Include="Common\Utils.cs" />
+    <Compile Include="Common\WaitFormScope.cs" />
+    <Compile Include="Controls\AdaptiveTileControl.cs" />
+    <Compile Include="Controls\Report\UcBaseGridReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UcBase.cs" />
+    <Compile Include="Controls\Report\UcBaseReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Report\UcNotCollectReport.cs" />
+    <Compile Include="Controls\Report\UcNotCollectReport.Designer.cs">
+      <DependentUpon>UcNotCollectReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Report\UcCollectedReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Report\UcCollectedReport.Designer.cs">
+      <DependentUpon>UcCollectedReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UcDashBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UcDashBoard.Designer.cs">
+      <DependentUpon>UcDashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UcPrint.cs" />
+    <Compile Include="Controls\UcPrint.Designer.cs">
+      <DependentUpon>UcPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UcReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UcReport.Designer.cs">
+      <DependentUpon>UcReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UcError.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UcError.Designer.cs">
+      <DependentUpon>UcError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UcCollect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UcCollect.Designer.cs">
+      <DependentUpon>UcCollect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UcSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UcSettings.Designer.cs">
+      <DependentUpon>UcSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Models\CollectSummary.cs" />
+    <Compile Include="Database\Models\InvoiceDetail.cs" />
+    <Compile Include="Database\Db.cs" />
+    <Compile Include="Controls\UcLogin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UcLogin.Designer.cs">
+      <DependentUpon>UcLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Models\Product.cs" />
+    <Compile Include="Database\Models\Warehouse.cs" />
+    <Compile Include="Forms\FrmReturnInvoiceOptions.cs" />
+    <Compile Include="Forms\FrmReturnInvoiceOptions.Designer.cs">
+      <DependentUpon>FrmReturnInvoiceOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCollectReportOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCollectReportOptions.Designer.cs">
+      <DependentUpon>FrmCollectReportOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmTileDialog.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\Report\UcNotCollectReport.resx">
+      <DependentUpon>UcNotCollectReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Report\UcCollectedReport.resx">
+      <DependentUpon>UcCollectedReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UcDashBoard.resx">
+      <DependentUpon>UcDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UcPrint.resx">
+      <DependentUpon>UcPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UcReport.resx">
+      <DependentUpon>UcReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UcError.resx">
+      <DependentUpon>UcError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UcCollect.resx">
+      <DependentUpon>UcCollect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UcSettings.resx">
+      <DependentUpon>UcSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UcLogin.resx">
+      <DependentUpon>UcLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCollectReportOptions.resx">
+      <DependentUpon>FrmCollectReportOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmReturnInvoiceOptions.resx">
+      <DependentUpon>FrmReturnInvoiceOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="InvoiceForms\PesinFatura.repx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="InvoiceForms\PesinFaturaIade.repx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Application.ico" />
+    <None Include="Resources\ControlDashboard.png" />
+    <Content Include="Resources\ControlSettings.png" />
+    <Content Include="Sql\qry_GetB2CInvoicesCollectedLineSummary.sql" />
+    <Content Include="Sql\qry_GetB2CInvoicesCollectedSummary.sql" />
+    <None Include="Resources\TopLogo.png" />
+    <None Include="Resources\insertheader_32x32.png" />
+    <None Include="Resources\groupheader_32x32.png" />
+    <Content Include="Sql\qry_CheckB2CInvoiceReturns.sql" />
+    <Content Include="Sql\qry_GetB2CInvoiceDetailsForReturn.sql" />
+    <Content Include="Sql\sp_InsertB2CReturnInvoices.sql" />
+    <None Include="Resources\App.ico" />
+    <Content Include="Resources\Apply_32x32.png" />
+    <Content Include="Resources\Cancel_32x32.png" />
+    <None Include="Resources\CancelDocument_32x32.png" />
+    <None Include="Resources\PrintPreview_32x32.png" />
+    <None Include="Resources\Refresh_32x32.png" />
+    <None Include="Resources\logo.png" />
+    <Content Include="Resources\Print_32x321.png" />
+    <None Include="Resources\Splash.png" />
+    <Content Include="Sql\qry_GetB2CInvoicesNotCollectedReport.sql" />
+    <Content Include="Sql\qry_GetB2CInvoicesCollectedReport.sql" />
+    <Content Include="Sql\tbl_CollectedProductsMaster.sql" />
+    <Content Include="Sql\tbl_CollectedProductsDetail.sql" />
+    <Content Include="Sql\qry_GetB2CInvoiceLines.sql" />
+    <Content Include="Sql\qry_GetB2CInvoices.sql" />
+    <Content Include="Sql\qry_GetB2CItemInfo.sql" />
+    <Content Include="Sql\qry_GetB2CWarehouse.sql" />
+    <Content Include="Sql\qry_InsertB2CCollectedDetail.sql" />
+    <Content Include="Sql\qry_InsertB2CCollectedHeader.sql" />
+    <None Include="Resources\GrayScale_Minimize_16x16.png" />
+    <None Include="Resources\GrayScale_Cancel_32x32.png" />
+    <None Include="Resources\ControlReport.png" />
+    <None Include="Resources\ControlPackage.png" />
+    <None Include="nlog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
